@@ -1,0 +1,26 @@
+<div class="pagination justify-content-center mb-4">
+{%comment %}Si hay numero previo {%endcomment%}
+    {%if articles.has_previous%}
+{%comment %}Flechita y envia a la pagina 1 {%endcomment%}
+    <li>
+        <a class="page-link" href="?page=1">&laquo; Primero</a>
+    </li>
+{%comment %}Envia al anterior {%endcomment%}
+    <a href="?page={{ articles.previous_page_number }}">
+        Anterior</a>
+    {%endif%}
+
+    <span class="current">
+{%comment %}Numero de pagina actual del total de paginas {%endcomment%}
+        Pagina {{ articles.number }} de {{ articles.paginator.num_pages}}
+    </span>
+{%comment %}Si hay pagina siguiente {%endcomment%}
+    {%if articles.has_next%}
+{%comment %}Envia a la siguiente página {%endcomment%}
+    <a href="?page={{ articles.next_page_number }}">
+        Siguiente</a>
+{%comment %}Envia a la ultima pagina {%endcomment%}
+    <a href="?page={{ articles.paginator.num_pages }}">
+        Ultima &raquo;</a>
+    {%endif%}
+</div>

@@ -1,0 +1,16 @@
+{% for article in articles %}
+
+<div class="card mb-4"> 
+  {% comment %} <img class="card-img-top" src="{{ post.image_header.url }}" alt="Card image cap"> {% endcomment %}
+  <div class="card-body">
+    <h2 class="card-title"><a href="{% url 'article' article.id %}">{{article.title}}</a></h2>
+    <p class="card-text">{{article.content|safe|truncatechars:300}}</p>
+    <a href="{% url 'article' article.id %}" class="btn btn-primary">Leer más &rarr;</a>
+  </div>
+  <div class="card-footer text-muted">
+    Escrito el {{article.created_at}}
+    <a href="#">{{article.user}}</a>
+  </div>
+</div>
+{% endfor %}
+
