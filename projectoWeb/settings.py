@@ -29,11 +29,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-MODE = config('DEBUG')
-if MODE == 0:
-    DEBUG = True
-else:
-    DEBUG = False
+# MODE = config('DEBUG')
+# if MODE == 0:
+#     DEBUG = True
+# else:
+#     DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['*']
