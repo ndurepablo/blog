@@ -36,7 +36,7 @@ SECRET_KEY = config('SECRET_KEY')
 #     DEBUG = True
 # else:
 #     DEBUG = False
-DEBUG = config('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://web-production-8384.up.railway.app']
