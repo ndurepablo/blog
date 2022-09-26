@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+
+
 from projectoWeb.db import DATABASES
 
  
@@ -34,7 +36,7 @@ SECRET_KEY = config('SECRET_KEY')
 #     DEBUG = True
 # else:
 #     DEBUG = False
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://web-production-8384.up.railway.app']
